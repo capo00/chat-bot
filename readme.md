@@ -25,3 +25,20 @@ V posledních letech zažívají obrovský boom uživatelská rozhraní založen
 * zkopírovat z terminálu startTunnel url a token do developers.facebook - Messenger -> Settings -> sekce Webhooks - Edit callback url
 * pak se v terminálu startDev zobrazí Validation Succeded
 * jít na stránku ve fb -> zobrazit jako návštěvník -> používat chat
+
+### Heroku
+* https://heroku.com/ -> Sign In
+* New -> Create new App
+* ...
+* po vytvoření appky záložka Deploy, stáhnout Heroku CLI
+* v současném git adresáři (např. na github) dát heroku git:remote -a chat-bot-2021
+* přidat Procfile, který má obsahovat
+`web: yarn start`
+* push do masteru
+* push do heroku
+`git push heroku master
+// or
+git push heroku master --force`
+* tím se to i nasadí a pak je třeba propojit novou url s fb:
+* jít v heroku na záložku Settings -> sekce Domains -> zkpírovat url do developers.facebook - Messenger -> Settings -> sekce Webhooks - Edit callback url
+* Verify Token je ten samý, co je v config/default.json 
