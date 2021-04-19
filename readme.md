@@ -41,5 +41,5 @@ Then ChatBot ask you the same question again.
 // or
 git push heroku master --force`
 * Last step also deploy it to production, then it is necessary to connect it with FB:
-* In heroku there go to tab Settings -> section Domains -> copy url to developers.facebook.com -> Messenger -> Settings -> section Webhooks - Edit callback url
+* In heroku there go to tab Settings -> section Domains -> copy url to developers.facebook.com -> Messenger -> Settings -> section Webhooks - Edit callback url (add _/webhook_ at the end of url)
 * Verify Token is the same one as in config/default.json 
