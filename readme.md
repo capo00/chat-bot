@@ -1,44 +1,45 @@
-# Vyrob si vlastního chatbota
+# ChatBot for searching info about uu5 library
 
-V posledních letech zažívají obrovský boom uživatelská rozhraní založená na přirozené konverzaci. Můžeš se svého telefonu zeptat na zítřejší počasí, rezervovat si na facebooku lístky do kina apod. Přijď si vytvořit vlastního chatbota a zjistit, jak se takováto rozhraní vyrábí.
-Úvod
+You can send a code of the library and chat bot return to you basic information and some specific data about the library.
 
-### Co se na tomto workshopu naučíte a co si vyzkoušíte:
+## For Users
+* You can start with chat by **Hi** or **Hello**
+* ChatBot ask to you about the code of the library which are you looking for.
+* Write a code of existing library e.g. UU5.Imaging or you can close the conversation with **bye**
+* ChatBot ask to you about specific info about the library.
+* You can choose one of these possibilities: **Find documentation**, **Send issue**, **Get source code**,
+**Get dependencies**.
+* ChatBot give you the information if it understands to your answer or say to you, it does not know, what you want to.
+Then ChatBot ask you the same question again.
+* You can anytime close the conversation by **bye**.
 
-* Zjistíte, jak fungují automatické roboty pro chat
-* Zjistíte, jak ze svého počítače udělat server pro chatbota
-* Naučíte se konfigurovat chatbota na facebooku
-* Vytvoříte si vlastního chatbota v jazyce Javascript
-* A nakonec si se svým chatbotem můžete promluvit!
-
-### Co k tomu budete potřebovat:
-
-* Účet na Facebooku
+## For Develoopers
 
 ### Start
 * https://github.com/snopedom/facebook-bot/blob/master/article.md#facebook-dev-panel-time
-* https://developers.facebook.com/ -> MyApps
-* vlevo v menu je Messenger > Settings -> sekce Access Tokens - tlačítko Generate Token -> vložit do config/default.json
-* vlevo v menu je Settings > basic -> App Secret -> Show -> vložit do default.json
-* yarn startTunnel
-* yarn startDev
-* zkopírovat z terminálu startTunnel url a token do developers.facebook - Messenger -> Settings -> sekce Webhooks - Edit callback url
-* pak se v terminálu startDev zobrazí Validation Succeded
-* jít na stránku ve fb -> zobrazit jako návštěvník -> používat chat
+* https://developers.facebook.com/ -> MyApps -> ChatBot
+* In left menu, there is Messenger > Settings -> Section Access Tokens - button Generate Token -> copy to config/default.json to ACCESS_TOKEN
+* In left menu, there is Settings > Basic -> App Secret -> Show -> cop to default.json to APP_SECRET
+* In console: yarn startTunnel
+* In another console: yarn startDev
+* Copy Webhook url and Verify token from startTunnel terminal to developers.facebook.com -> Messenger -> Settings -> Section Webhooks - Edit callback url
+* In terminal startDev there will be a message "Validation Succeded"
+* Go to your FB page with chatbot (https://www.facebook.com/Chat-Bot-105976891540050) -> show as visitor -> using chat
+* BootBot API: https://github.com/Charca/bootbot
 
 ### Heroku
 * https://heroku.com/ -> Sign In
 * New -> Create new App
 * ...
-* po vytvoření appky záložka Deploy, stáhnout Heroku CLI
-* v současném git adresáři (např. na github) dát heroku git:remote -a chat-bot-2021
-* přidat Procfile, který má obsahovat
+* After App creation, go to tab Deploy -> download Heroku CLI
+* In current git repository (e.g. on github) in console there enter "heroku git:remote -a chat-bot-2021"
+* add Procfile, which contains
 `web: yarn start`
-* push do masteru
-* push do heroku
+* push to masteru
+* push to heroku
 `git push heroku master
 // or
 git push heroku master --force`
-* tím se to i nasadí a pak je třeba propojit novou url s fb:
-* jít v heroku na záložku Settings -> sekce Domains -> zkpírovat url do developers.facebook - Messenger -> Settings -> sekce Webhooks - Edit callback url
-* Verify Token je ten samý, co je v config/default.json 
+* Last step also deploy it to production, then it is necessary to connect it with FB:
+* In heroku there go to tab Settings -> section Domains -> copy url to developers.facebook.com -> Messenger -> Settings -> section Webhooks - Edit callback url
+* Verify Token is the same one as in config/default.json 
