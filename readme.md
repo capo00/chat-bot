@@ -13,7 +13,7 @@ You can send a code of the library and chat bot return to you basic information 
 Then ChatBot ask you the same question again.
 * You can anytime close the conversation by **bye**.
 
-## For Develoopers
+## For Developers
 
 ### Start
 * https://github.com/snopedom/facebook-bot/blob/master/article.md#facebook-dev-panel-time
